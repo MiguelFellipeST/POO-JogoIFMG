@@ -17,8 +17,7 @@ public class Colisoes {
 
     // Método para definir as áreas de colisão
     private void inicializarAreasDeColisao() {
-        // Defina suas áreas de colisão aqui
-        // Exemplo: Adiciona três áreas de colisão
+    
         areasDeColisao.add(new Rectangle(0, 0, 5000, 10 * 15)); // Área 1 (Prédio)
         areasDeColisao.add(new Rectangle(0, 590, 1000, 300)); // Área 2 (Lago)
         areasDeColisao.add(new Rectangle(1150, 550, 440, 300)); // Área 3 (Ônibus)
