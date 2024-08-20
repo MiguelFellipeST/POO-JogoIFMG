@@ -5,35 +5,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Classe para gerenciar áreas de colisão
-public class Colisoes {
+class Colisoes {
 
-    private List<Rectangle> areasDeColisao; // Lista para armazenar as áreas de colisão
+    // Lista para armazenar as áreas de colisão
+    private List<Rectangle> areasDeColisao;
 
-    // Construtor da classe Colisoes
+    // Construtor que inicializa as áreas de colisão
     public Colisoes() {
         areasDeColisao = new ArrayList<>();
-        inicializarAreasDeColisao(); // Método para inicializar as áreas de colisão
+        inicializarAreasDeColisao();
     }
 
     // Método para definir as áreas de colisão
     private void inicializarAreasDeColisao() {
-    
-        areasDeColisao.add(new Rectangle(0, 0, 5000, 10 * 15)); // Área 1 (Prédio)
-        areasDeColisao.add(new Rectangle(0, 590, 1000, 300)); // Área 2 (Lago)
-        areasDeColisao.add(new Rectangle(1150, 550, 440, 300)); // Área 3 (Ônibus)
+        // Adiciona várias áreas de colisão como retângulos
+        areasDeColisao.add(new Rectangle(0, 0, 200, 40 * 16)); // Área 1
+        areasDeColisao.add(new Rectangle(300, 100, 150, 100)); // Área 2
+        areasDeColisao.add(new Rectangle(600, 400, 100, 100)); // Área 3
         areasDeColisao.add(new Rectangle(1000, 520, 28, 28)); // Área 4 (Placa)
-        areasDeColisao.add(new Rectangle(0, 280, 80, 600)); // Área 5 (Mato Esquerda)
+        areasDeColisao.add(new Rectangle(0, 400, 80, 600)); // Área 5 (Mato Esquerda)
         areasDeColisao.add(new Rectangle(1470, 270, 80, 600)); // Área 6 (Mato Direito)
     }
 
-    // Método para verificar se a posição do jogador colide com alguma área
-    public boolean verificarColisao(int xJogador, int yJogador, int tamanhoTile) {
-        Rectangle limitesJogador = new Rectangle(xJogador, yJogador, tamanhoTile, tamanhoTile);
+    // Verifica se houve colisão com alguma área de colisão
+    public boolean verificarColisao(int jogadorX, int jogadorY, int tamanhoDoTile) {
+        // Cria um retângulo representando a posição atual do jogador
+        Rectangle jogadorBounds = new Rectangle(jogadorX, jogadorY, tamanhoDoTile, tamanhoDoTile);
+        // Verifica se o retângulo do jogador colide com alguma das áreas de colisão
         for (Rectangle area : areasDeColisao) {
-            if (limitesJogador.intersects(area)) {
+            if (jogadorBounds.intersects(area)) {
                 return true; // Colisão detectada
             }
         }
         return false; // Nenhuma colisão detectada
     }
 }
+
