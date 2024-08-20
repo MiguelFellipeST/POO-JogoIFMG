@@ -7,10 +7,7 @@ import java.awt.Dimension;  // Importa a classe Dimension, que define a largura 
 import java.awt.Graphics;  // Importa a classe Graphics, que fornece métodos para desenhar em um componente.
 import java.awt.Graphics2D;  // Importa a classe Graphics2D, que é uma subclasse de Graphics e oferece mais opções de desenho avançado.
 import java.awt.Image;  // Importa a classe Image, que representa uma imagem que pode ser desenhada na tela.
-import java.awt.Rectangle;  // Importa a classe Rectangle, que representa um retângulo e é útil para definir áreas de colisão e limites de desenho.
 import java.io.IOException;  // Importa a classe IOException, que é usada para lidar com erros de entrada/saída, como falhas ao ler arquivos.
-import java.util.ArrayList;  // Importa a classe ArrayList, que é uma implementação da interface List e fornece uma lista dinâmica que pode crescer e encolher conforme necessário.
-import java.util.List;  // Importa a interface List, que define um contrato para listas ordenadas que permitem elementos duplicados e acesso por índice.
 import javax.imageio.ImageIO;  // Importa a classe ImageIO, que fornece métodos para ler e escrever imagens em diferentes formatos (como PNG, JPEG) a partir de arquivos ou streams.
 
 // Classe GamePanel estende JPanel e implementa Runnable para atualizar e desenhar o jogo
